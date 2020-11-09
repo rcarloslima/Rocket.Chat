@@ -32,8 +32,18 @@ const RoomForeword = ({ _id: rid }) => {
 
 							const avatarUrl = getUserAvatarURL(username, user?.avatarETag);
 
-							return <Avatar size='x48' title={username} url={avatarUrl} key={index} data-username={username} />;
-						})}
+							return (
+								<Box key={index}>
+									<Avatar
+										size='x48'
+										title={username}
+										url={avatarUrl}
+										data-username={username}
+									/>
+								</Box>
+							);
+						},
+					)}
 				</Avatar.Stack>
 			</Margins>
 		</Flex.Item>
